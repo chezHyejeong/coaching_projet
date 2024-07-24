@@ -9,9 +9,24 @@ function InscriptionPage() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSignupClick = () => {
-    console.log("Try login:", { username, email });
-    navigate("/");
+  const handleSignupClick = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+      });
+      if (response.ok) {
+        console.log('Signup successful');
+        navigate("/");
+      } else {
+        console.error('Signup failed');
+      }
+    } catch (error) {
+      console.error('Error during signup:', error);
+    }
   };
 
   const handleConnexionClick = () => {
