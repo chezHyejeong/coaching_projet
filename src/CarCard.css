@@ -3,17 +3,31 @@
   border-radius: 8px;
   padding: 10px;
   text-align: left;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car-image-link {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%; /* 추가: 링크의 너비를 100%로 설정 */
+  text-align: center; /* 추가: 링크 내부의 콘텐츠를 가운데 정렬 */
 }
 
 .car-image {
-  width: 100%; /* Adjust this value as needed */
-  height: auto; /* This maintains the aspect ratio */
+  width: 50%;
+  height: auto;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
 }
 
 .car-info {
   padding: 10px;
+  text-align: center;
 }
 
 .car-name {
