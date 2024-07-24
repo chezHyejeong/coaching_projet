@@ -73,6 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Back
 `cd server`
-`cd npm install`
+`npm install`
 `npm install express body-parser cors`
 `node server.js`
