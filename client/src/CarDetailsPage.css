@@ -1,0 +1,40 @@
+.car-details-page {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.car-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.car-details-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car-image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.car-description {
+  text-align: left;
+}
+
+.reserve-button {
+  background-color: #8fb3ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.reserve-button:hover {
+  background-color: #7aa1e6;
+}

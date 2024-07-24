@@ -1,32 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import CarCard from "./CarCard";
+import Header from "./Header";
+import "./App.css";
 
-function MainPage({ isLoggedIn }) {
-  const carData = Array.from({ length: 24 }, () => ({
-    name: "Hyundai Santafe",
-    price: "201 €",
-    availableFrom: "26/07",
-  }));
+function MainPage({ isLoggedIn, cars = [] }) {
+  const navigate = useNavigate();
+
+  const handleConnexionClick = () => {
+    navigate("/login");
+  };
 
   return (
     <div>
-      <header className="header">
-        <div className="logo">LocaCar</div>
-        <input type="text" className="search-bar" placeholder="Search..." />
-        <div className="icons">
-          {isLoggedIn ? (
-            <div className="user-icon">👤</div>
-          ) : (
-            <div className="buttons">
-              <button className="login-button">Connexion</button>
-              <button className="signup-button">Inscription</button>
-            </div>
-          )}
-        </div>
-      </header>
+      <Header isLoggedIn={isLoggedIn} onConnexionClick={handleConnexionClick} />
       <main className="car-grid">
-        {carData.map((car, index) => (
-          <CarCard key={index} car={car} />
+        {cars.map((car) => (
+          <CarCard key={car.id} car={car} />
         ))}
       </main>
     </div>
