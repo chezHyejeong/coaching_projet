@@ -1,0 +1,81 @@
+.profile-page {
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.profile-info,
+.profile-cars,
+.profile-reservations {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.profile-info h2,
+.profile-cars h2,
+.profile-reservations h2 {
+  margin-top: 0;
+}
+
+.car-card,
+.reservation-card {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.car-card img,
+.reservation-card img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.car-info,
+.reservation-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  display: flex;
+  justify-content: end;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logout-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logout-button {
+  background-color: #000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #444;
+}

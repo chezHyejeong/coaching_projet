@@ -13,6 +13,10 @@ function Header({ isLoggedIn, onConnexionClick }) {
     navigate("/inscription");
   };
 
+  const handleProfileClick = () => {
+    navigate("/profile");
+  };
+
   return (
     <header className="header">
       <div
@@ -25,7 +29,13 @@ function Header({ isLoggedIn, onConnexionClick }) {
       <input type="text" className="search-bar" placeholder="Search..." />
       <div className="icons">
         {isLoggedIn ? (
-          <div className="user-icon">👤</div>
+          <div
+            className="user-icon"
+            onClick={handleProfileClick}
+            style={{ cursor: "pointer" }}
+          >
+            👤
+          </div>
         ) : (
           <div className="buttons">
             <button className="login-button" onClick={onConnexionClick}>

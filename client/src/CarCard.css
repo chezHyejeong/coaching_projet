@@ -1,7 +1,7 @@
 .car-card {
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 10px;
+  text-align: center;
   text-align: left;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -11,32 +11,31 @@
 }
 
 .car-image-link {
-  display: block;
-  margin-bottom: 10px;
-  width: 100%; /* 추가: 링크의 너비를 100%로 설정 */
-  text-align: center; /* 추가: 링크 내부의 콘텐츠를 가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
 }
 
 .car-image {
-  width: 50%;
+  width: 30%;
   height: auto;
   border-bottom: 1px solid #ccc;
-  display: block;
   margin: 0 auto;
 }
 
 .car-info {
-  padding: 10px;
   text-align: center;
 }
 
 .car-name {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: orange;
 }
 
 .car-price {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: blue;
 }
 
