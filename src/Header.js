@@ -9,6 +9,10 @@ function Header({ isLoggedIn, onConnexionClick }) {
     navigate("/");
   };
 
+  const handleInscriptionClick = () => {
+    navigate("/inscription");
+  };
+
   return (
     <header className="header">
       <div
@@ -27,7 +31,9 @@ function Header({ isLoggedIn, onConnexionClick }) {
             <button className="login-button" onClick={onConnexionClick}>
               Connexion
             </button>
-            <button className="signup-button">Inscription</button>
+            <button className="signup-button" onClick={handleInscriptionClick}>
+              Inscription
+            </button>
           </div>
         )}
       </div>
