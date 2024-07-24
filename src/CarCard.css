@@ -1,0 +1,32 @@
+.car-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+}
+
+.car-image {
+  width: 100%; /* Adjust this value as needed */
+  height: auto; /* This maintains the aspect ratio */
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.car-info {
+  padding: 10px;
+}
+
+.car-name {
+  font-size: 1.2em;
+  color: orange;
+}
+
+.car-price {
+  font-size: 1.2em;
+  color: blue;
+}
+
+.car-availability {
+  font-size: 0.9em;
+  color: gray;
+}
