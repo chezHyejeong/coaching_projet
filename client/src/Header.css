@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8fb3ff;
+  padding: 10px;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 40vw;
+  padding: 5px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon,
+.menu-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-button,
+.signup-button {
+  background-color: #8fb3ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
