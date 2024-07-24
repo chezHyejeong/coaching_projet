@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8fb3ff;
+  padding: 10px;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 40vw;
+  padding: 5px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon,
+.menu-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-button,
+.signup-button {
+  background-color: #8fb3ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.login-page .car-grid {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 70vh;
+}
