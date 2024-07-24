@@ -7,6 +7,7 @@ import InscriptionPage from "./InscriptionPage";
 import CarDetailsPage from "./CarDetailsPage";
 import carImage from "./assets/images/gate_car1.png";
 import ProfilePage from "./ProfilePage";
+import ManageCarsPage from "./ManageCarsPage";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ function App() {
           />
           <Route path="/car/:id" element={<CarDetailsPage cars={carData} />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/manage-cars" element={<ManageCarsPage />} />
         </Routes>
       </div>
     </Router>

@@ -1,0 +1,120 @@
+.manage-cars-page {
+  text-align: left;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.manage-cars-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-car-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-car-button {
+  background-color: #4caf50;
+  width: 180px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.add-car-button .add-car-text {
+  margin-left: 5px;
+}
+
+.cars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.car-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.car-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.car-info {
+  flex-grow: 1;
+}
+
+.car-info h3 {
+  margin: 0;
+}
+
+.car-status {
+  font-size: 0.9em;
+}
+
+.car-status.réservée {
+  color: blue;
+}
+
+.car-status.indisponible {
+  color: red;
+}
+
+.car-status.disponible {
+  color: green;
+}
+
+.car-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: -50px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.edit-button:hover .dropdown-content {
+  display: block;
+}

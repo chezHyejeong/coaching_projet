@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import "./ProfilePage.css";
 import carImage from "./assets/images/gate_car1.png";
 
 function ProfilePage() {
+  const navigate = useNavigate();
+
+  const handleManageCarsClick = () => {
+    navigate("/manage-cars");
+  };
+
   return (
     <div className="profile-page">
       <Header />
@@ -29,7 +36,9 @@ function ProfilePage() {
               <p>Réservée entre 08/08 - 15/08</p>
             </div>
           </div>
-          <a href="/manage-cars">Gérer mes voitures →</a>
+          <a href="/manage-cars" onClick={handleManageCarsClick}>
+            Gérer mes voitures →
+          </a>
         </div>
         <div className="profile-reservations">
           <h2>Mes réservations</h2>
