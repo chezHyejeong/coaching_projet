@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CarCard from "./CarCard";
+import Header from "./Header";
 
 function MainPage({ isLoggedIn }) {
   const navigate = useNavigate();
@@ -17,22 +18,7 @@ function MainPage({ isLoggedIn }) {
 
   return (
     <div>
-      <header className="header">
-        <div className="logo">LocaCar</div>
-        <input type="text" className="search-bar" placeholder="Search..." />
-        <div className="icons">
-          {isLoggedIn ? (
-            <div className="user-icon">👤</div>
-          ) : (
-            <div className="buttons">
-              <button className="login-button" onClick={handleConnexionClick}>
-                Connexion
-              </button>
-              <button className="signup-button">Inscription</button>
-            </div>
-          )}
-        </div>
-      </header>
+      <Header isLoggedIn={isLoggedIn} onConnexionClick={handleConnexionClick} />
       <main className="car-grid">
         {carData.map((car, index) => (
           <CarCard key={index} car={car} />

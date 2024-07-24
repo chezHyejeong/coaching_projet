@@ -11,12 +11,6 @@ function App() {
     setIsLoggedIn(true);
   };
 
-  const carData = Array.from({ length: 24 }, () => ({
-    name: "Hyundai Santafe",
-    price: "201 €",
-    availableFrom: "26/07",
-  }));
-
   return (
     <Router>
       <div className="App">
