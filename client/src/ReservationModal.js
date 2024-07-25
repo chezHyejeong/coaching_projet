@@ -3,16 +3,22 @@ import Modal from "react-modal";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { fr } from "date-fns/locale";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import PaymentForm from "./PaymentForm";
 import "./ReservationModal.css";
 
 registerLocale("fr", fr);
 
 Modal.setAppElement("#root");
 
+const stripePromise = loadStripe("my-publishable-key");
+
 const ReservationModal = ({ isOpen, onRequestClose, car }) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [pickupLocation, setPickupLocation] = useState(car.lieuDePrise);
+  const [isPaymentCompleted, setIsPaymentCompleted] = useState(false);
 
   const calculateTotalPrice = () => {
     if (!startDate || !endDate) return 0;
@@ -25,7 +31,8 @@ const ReservationModal = ({ isOpen, onRequestClose, car }) => {
     return days * pricePerDay;
   };
 
-  const handleReservation = () => {
+  const handlePaymentSuccess = () => {
+    setIsPaymentCompleted(true);
     alert(
       `Reservation for ${
         car.name
@@ -67,7 +74,12 @@ const ReservationModal = ({ isOpen, onRequestClose, car }) => {
           />
         </label>
         <p>Prix total: {calculateTotalPrice()}€</p>
-        <button onClick={handleReservation}>Confirmer la réservation</button>
+        <Elements stripe={stripePromise}>
+          <PaymentForm
+            totalPrice={calculateTotalPrice()}
+            onPaymentSuccess={handlePaymentSuccess}
+          />
+        </Elements>
         <button onClick={onRequestClose}>Annuler</button>
       </div>
     </Modal>
