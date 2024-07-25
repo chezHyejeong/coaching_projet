@@ -1,13 +1,13 @@
 .manage-cars-page {
   text-align: left;
   font-family: Arial, sans-serif;
-  padding: 20px;
 }
 
 .manage-cars-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
 }
 
 .add-car-button-container {
