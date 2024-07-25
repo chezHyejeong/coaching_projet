@@ -1,33 +1,32 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import authService from "./services/authService";
-import "./InscriptionPage.css";
+import "./LoginPage.css";
+import authService from "../services/authService";
 
-function InscriptionPage() {
+function LoginPage({ onLogin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSignupClick = async () => {
+  const handleLoginClick = async () => {
     try {
-      // Ici nous simulons l'inscription en appelant l'API
-      await authService.signup(username, email, password);
-      console.log('Signup successful and user logged in');
+      await authService.login(username, password);
+      onLogin();
       navigate("/");
     } catch (error) {
-      console.error('Error during signup:', error.message);
+      setMessage("Login failed");
     }
   };
 
   return (
-    <div className="inscription-page">
-      <main className="signup-form">
-        <h2>Inscription</h2>
+    <div className="login-page">
+      <main className="login-form">
+        <h2>Connexion</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            handleSignupClick();
+            handleLoginClick();
           }}
         >
           <div className="form-group">
@@ -41,17 +40,7 @@ function InscriptionPage() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email :</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Mot de passe:</label>
+            <label htmlFor="password">Mot de passe :</label>
             <input
               type="password"
               id="password"
@@ -61,12 +50,13 @@ function InscriptionPage() {
             />
           </div>
           <button type="submit" className="submit-button">
-            Inscription
+            Connexion
           </button>
         </form>
+        {message && <p className="error-message">{message}</p>}
       </main>
     </div>
   );
 }
 
-export default InscriptionPage;
+export default LoginPage;

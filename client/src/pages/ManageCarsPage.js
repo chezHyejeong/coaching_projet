@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 import "./ManageCarsPage.css";
-import carImage from "./assets/images/gate_car1.png";
+import carImage from "../assets/images/gate_car1.png";
 
 const carsData = [
   {

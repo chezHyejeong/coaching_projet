@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./components/Header";
 import carImage from "./assets/images/gate_car1.png";
 import "./ViewAllReservationsPage.css";
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import logoImage from "../assets/images/locacar_logo.png";
 import "./Header.css";
 
 function Header({ isLoggedIn, onLogout }) {
@@ -23,13 +24,12 @@ function Header({ isLoggedIn, onLogout }) {
 
   return (
     <header className="header">
-      <div
-        className="logo"
+      <img
+        src={logoImage}
+        alt="LocaCar Logo"
         onClick={handleLogoClick}
-        style={{ cursor: "pointer" }}
-      >
-        LocaCar
-      </div>
+        className="logo-image"
+      />
       <input type="text" className="search-bar" placeholder=" Recherche" />
       <div className="icons">
         {isLoggedIn ? (

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import MainPage from "./MainPage";
-import LoginPage from "./LoginPage";
-import InscriptionPage from "./InscriptionPage";
-import CarDetailsPage from "./CarDetailsPage";
+import MainPage from "./pages/MainPage";
+import LoginPage from "./pages/LoginPage";
+import InscriptionPage from "./pages/InscriptionPage";
+import CarDetailsPage from "./pages/CarDetailsPage";
 import carImage from "./assets/images/gate_car1.png";
-import ProfilePage from "./ProfilePage";
-import ManageCarsPage from "./ManageCarsPage";
+import ProfilePage from "./pages/ProfilePage";
+import ManageCarsPage from "./pages/ManageCarsPage";
 import ViewAllReservationsPage from "./ViewAllReservationsPage";
 import authService from "./services/authService";
-import Header from "./Header";
+import Header from "./components/Header";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -12,7 +12,7 @@ registerLocale("fr", fr);
 
 Modal.setAppElement("#root");
 
-const stripePromise = loadStripe("my-publishable-key");
+const stripePromise = loadStripe("your-publishable-key-here");
 
 const ReservationModal = ({ isOpen, onRequestClose, car }) => {
   const [startDate, setStartDate] = useState(null);
@@ -58,7 +58,6 @@ const ReservationModal = ({ isOpen, onRequestClose, car }) => {
             dateFormat="dd/MM/yyyy"
             locale="fr"
             className="date-picker"
-            shouldCloseOnSelect={true}
           />
         </label>
         <label>
@@ -69,12 +68,19 @@ const ReservationModal = ({ isOpen, onRequestClose, car }) => {
             dateFormat="dd/MM/yyyy"
             locale="fr"
             className="date-picker"
-            shouldCloseOnSelect={true}
             minDate={startDate}
           />
         </label>
+        <label>
+          Lieu de prise en charge:
+          <input
+            type="text"
+            value={pickupLocation}
+            onChange={(e) => setPickupLocation(e.target.value)}
+          />
+        </label>
         <p>Prix total: {calculateTotalPrice()}€</p>
-        <Elements stripe={stripePromise}>
+        <Elements stripe={stripePromise} options={{ locale: "fr" }}>
           <PaymentForm
             totalPrice={calculateTotalPrice()}
             onPaymentSuccess={handlePaymentSuccess}

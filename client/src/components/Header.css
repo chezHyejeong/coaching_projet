@@ -7,11 +7,11 @@
   color: white;
 }
 
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
+.logo-image {
+  cursor: pointer;
+  height: 80px;
+  margin-left: 2vw;
 }
-
 .search-bar {
   width: 40vw;
   height: 20px;
@@ -51,5 +51,3 @@
 .logout-button {
   width: auto !important;
 }
-
-

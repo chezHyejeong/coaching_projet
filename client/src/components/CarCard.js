@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./CarCard.css";
-import carImage from "./assets/images/gate_car1.png";
+import carImage from "../assets/images/gate_car1.png";
 
 function CarCard({ car }) {
   return (

@@ -1,32 +1,33 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./LoginPage.css";
-import authService from "./services/authService";
+import authService from "../services/authService";
+import "./InscriptionPage.css";
 
-function LoginPage({ onLogin }) {
+function InscriptionPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleLoginClick = async () => {
+  const handleSignupClick = async () => {
     try {
-      await authService.login(username, password);
-      onLogin();
+      // Ici nous simulons l'inscription en appelant l'API
+      await authService.signup(username, email, password);
+      console.log("Signup successful and user logged in");
       navigate("/");
     } catch (error) {
-      setMessage("Login failed");
+      console.error("Error during signup:", error.message);
     }
   };
 
   return (
-    <div className="login-page">
-      <main className="login-form">
-        <h2>Connexion</h2>
+    <div className="inscription-page">
+      <main className="signup-form">
+        <h2>Inscription</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            handleLoginClick();
+            handleSignupClick();
           }}
         >
           <div className="form-group">
@@ -40,7 +41,17 @@ function LoginPage({ onLogin }) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Mot de passe :</label>
+            <label htmlFor="email">Email :</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Mot de passe:</label>
             <input
               type="password"
               id="password"
@@ -50,13 +61,12 @@ function LoginPage({ onLogin }) {
             />
           </div>
           <button type="submit" className="submit-button">
-            Connexion
+            Inscription
           </button>
         </form>
-        {message && <p className="error-message">{message}</p>}
       </main>
     </div>
   );
 }
 
-export default LoginPage;
+export default InscriptionPage;

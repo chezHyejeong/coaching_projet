@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import CarCard from "./CarCard";
-import "./App.css";
+import CarCard from "../components/CarCard";
+import "../App.css";
 
 function MainPage({ isLoggedIn, cars = [] }) {
   const navigate = useNavigate();
