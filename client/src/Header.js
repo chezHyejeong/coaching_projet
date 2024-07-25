@@ -26,7 +26,7 @@ function Header({ isLoggedIn, onConnexionClick }) {
       >
         LocaCar
       </div>
-      <input type="text" className="search-bar" placeholder="Search..." />
+      <input type="text" className="search-bar" placeholder=" Recherche" />
       <div className="icons">
         {isLoggedIn ? (
           <div

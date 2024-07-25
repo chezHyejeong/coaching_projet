@@ -14,7 +14,11 @@
 
 .search-bar {
   width: 40vw;
+  height: 20px;
   padding: 5px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
 }
 
 .icons {
