@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-function Header({ isLoggedIn, onConnexionClick }) {
+function Header({ isLoggedIn, onConnexionClick, onLogout }) {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
@@ -25,7 +25,12 @@ function Header({ isLoggedIn, onConnexionClick }) {
       <input type="text" className="search-bar" placeholder="Search..." />
       <div className="icons">
         {isLoggedIn ? (
-          <div className="user-icon">👤</div>
+          <div className="buttons">
+            <button className="logout-button" onClick={onLogout}>
+              Déconnexion
+            </button>
+            <div className="user-icon">👤</div>
+          </div>
         ) : (
           <div className="buttons">
             <button className="login-button" onClick={onConnexionClick}>

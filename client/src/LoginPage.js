@@ -2,40 +2,27 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import "./LoginPage.css";
+import authService from "./services/authService";
 
 function LoginPage({ onLogin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleLoginClick = async () => {
     try {
-      const response = await fetch('http://localhost:5000/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-      if (response.ok) {
-        console.log('Login successful');
-        onLogin();
-        navigate("/");
-      } else {
-        console.error('Login failed');
-      }
+      await authService.login(username, password);
+      onLogin();
+      navigate("/");
     } catch (error) {
-      console.error('Error during login:', error);
+      setMessage("Login failed");
     }
-  };
-
-  const handleConnexionClick = () => {
-    navigate("/login");
   };
 
   return (
     <div className="login-page">
-      <Header onConnexionClick={handleConnexionClick} />
+      <Header />
       <main className="login-form">
         <h2>Connexion</h2>
         <form
@@ -68,6 +55,7 @@ function LoginPage({ onLogin }) {
             Connexion
           </button>
         </form>
+        {message && <p className="error-message">{message}</p>}
       </main>
     </div>
   );

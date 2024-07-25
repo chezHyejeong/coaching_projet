@@ -20,7 +20,7 @@ function InscriptionPage() {
       });
       if (response.ok) {
         console.log('Signup successful');
-        navigate("/");
+        navigate("/login");
       } else {
         console.error('Signup failed');
       }
