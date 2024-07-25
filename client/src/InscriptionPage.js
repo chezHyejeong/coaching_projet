@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
+import authService from "./services/authService";
 import "./InscriptionPage.css";
 
 function InscriptionPage() {
@@ -9,18 +9,19 @@ function InscriptionPage() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSignupClick = () => {
-    console.log("Try login:", { username, email });
-    navigate("/");
-  };
-
-  const handleConnexionClick = () => {
-    navigate("/login");
+  const handleSignupClick = async () => {
+    try {
+      // Ici nous simulons l'inscription en appelant l'API
+      await authService.signup(username, email, password);
+      console.log('Signup successful and user logged in');
+      navigate("/");
+    } catch (error) {
+      console.error('Error during signup:', error.message);
+    }
   };
 
   return (
     <div className="inscription-page">
-      <Header onConnexionClick={handleConnexionClick} />
       <main className="signup-form">
         <h2>Inscription</h2>
         <form
