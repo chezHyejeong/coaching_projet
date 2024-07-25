@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
 import "./LoginPage.css";
 import authService from "./services/authService";
 
@@ -22,7 +21,6 @@ function LoginPage({ onLogin }) {
 
   return (
     <div className="login-page">
-      <Header />
       <main className="login-form">
         <h2>Connexion</h2>
         <form

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-function Header({ isLoggedIn, onConnexionClick, onLogout }) {
+function Header({ isLoggedIn, onLogout }) {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
@@ -11,6 +11,10 @@ function Header({ isLoggedIn, onConnexionClick, onLogout }) {
 
   const handleInscriptionClick = () => {
     navigate("/inscription");
+  };
+
+  const handleConnexionClick = () => {
+    navigate("/login");
   };
 
   return (
@@ -33,7 +37,7 @@ function Header({ isLoggedIn, onConnexionClick, onLogout }) {
           </div>
         ) : (
           <div className="buttons">
-            <button className="login-button" onClick={onConnexionClick}>
+            <button className="login-button" onClick={handleConnexionClick}>
               Connexion
             </button>
             <button className="signup-button" onClick={handleInscriptionClick}>

@@ -12,7 +12,6 @@ function CarDetailsPage({ cars }) {
 
   return (
     <div className="car-details-page">
-      <Header />
       <main className="car-details">
         <h1>{car.name}</h1>
         <div className="car-details-content">
