@@ -5,7 +5,7 @@ const router = express.Router();
 
 const SECRET_KEY = 'your-secret-key';
 
-
+// Exemple de stockage en mémoire des utilisateurs
 let users = [
 	{ username: 'admin', password: bcrypt.hashSync('password', 10) },
 	{ username: 'user', password: bcrypt.hashSync('1234', 10) },
@@ -27,8 +27,6 @@ router.post('/signup', async (req, res) => {
 // Login endpoint
 router.post('/login', async (req, res) => {
 	const { username, password } = req.body;
-	console.log('Received username:', username);
-	console.log('Received password:', password);
 
 	const user = users.find(u => u.username === username);
 	if (!user || !await bcrypt.compare(password, user.password)) {
@@ -52,4 +50,4 @@ const authenticateToken = (req, res, next) => {
 	});
 };
 
-module.exports = router;
+module.exports = { router, authenticateToken };
