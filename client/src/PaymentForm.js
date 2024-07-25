@@ -23,10 +23,7 @@ const PaymentForm = ({ totalPrice, onPaymentSuccess }) => {
       setError(error.message);
       setProcessing(false);
     } else {
-      // 여기에서 서버로 요청하여 결제를 처리해야 합니다.
-      // 예를 들어, 서버로 paymentMethod.id와 금액을 전송하여 결제를 완료합니다.
-
-      // 결제가 성공적으로 완료된 경우
+      // Here we treat the payment
       onPaymentSuccess();
       setProcessing(false);
     }
