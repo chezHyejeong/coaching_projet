@@ -11,6 +11,11 @@ function ProfilePage() {
     navigate("/manage-cars");
   };
 
+  const handleViewAllReservationsClick = (event) => {
+    event.preventDefault();
+    navigate("/view-all-reservations");
+  };
+
   return (
     <div className="profile-page">
       <Header />
@@ -56,7 +61,12 @@ function ProfilePage() {
               <p>Période de réservation: 25/07 (10H00) - 31/07 (10H00)</p>
             </div>
           </div>
-          <a href="/view-all-reservations">Voir toutes mes réservations →</a>
+          <a
+            href="/view-all-reservations"
+            onClick={handleViewAllReservationsClick}
+          >
+            Voir toutes mes réservations →
+          </a>
         </div>
         <div className="logout-button-container">
           <button className="logout-button">Déconnexion</button>

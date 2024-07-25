@@ -1,0 +1,48 @@
+.view-all-reservations-page {
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+.reservations-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.reservations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reservation-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.reservation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reservation-status {
+  font-weight: bold;
+}
+
+.reservation-status.en {
+  color: blue;
+}
+
+.reservation-status.annulée {
+  color: red;
+}
+
+.reservation-status.terminée {
+  color: green;
+}
