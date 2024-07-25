@@ -20,6 +20,7 @@ function App() {
     id: i + 1,
     name: "Hyundai Santafe",
     price: "201 €",
+    lieuDePrise: "12 rue de caumartin, 75009 Paris",
     availableFrom: "26/07",
     description: `Description text for car ${i + 1}`,
     image: carImage,

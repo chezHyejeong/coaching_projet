@@ -13,6 +13,7 @@ function CarCard({ car }) {
         <h2 className="car-name">{car.name}</h2>
         <p className="car-price">{car.price}</p>
         <p className="car-availability">A partir du {car.availableFrom}</p>
+        <p className="car-lieu">Lieu de prise: {car.lieuDePrise}</p>
       </div>
     </div>
   );
