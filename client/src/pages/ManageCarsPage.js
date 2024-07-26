@@ -40,7 +40,6 @@ const ManageCarsPage = () => {
 
   return (
     <div className="manage-cars-page">
-      <Header />
       <main className="manage-cars-content">
         <h2>Mes voitures</h2>
         <div className="add-car-button-container">

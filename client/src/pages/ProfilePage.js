@@ -18,7 +18,6 @@ function ProfilePage() {
 
   return (
     <div className="profile-page">
-      <Header />
       <main className="profile-content">
         <div className="profile-info">
           <h2>Infos personnelles</h2>

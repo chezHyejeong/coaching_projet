@@ -27,7 +27,6 @@ const reservationsData = [
 const ViewAllReservationsPage = () => {
   return (
     <div className="view-all-reservations-page">
-      <Header />
       <main className="reservations-content">
         <h2>Mes réservations</h2>
         <div className="reservations-list">
