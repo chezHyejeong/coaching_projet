@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
 import logoImage from "../assets/images/locacar_logo.png";
 import "./Header.css";
 
-function Header({ isLoggedIn, onLogout }) {
+function Header() {
   const navigate = useNavigate();
+  const { isLoggedIn, logout } = useAuth(); // Utiliser le hook pour obtenir `isLoggedIn` et `logout`
 
   const handleLogoClick = () => {
     navigate("/");
@@ -30,14 +32,17 @@ function Header({ isLoggedIn, onLogout }) {
         onClick={handleLogoClick}
         className="logo-image"
       />
-      <input type="text" className="search-bar" placeholder=" Recherche" />
+      <input type="text" className="search-bar" placeholder="Recherche" />
       <div className="icons">
         {isLoggedIn ? (
           <div className="buttons">
-            <button className="logout-button" onClick={onLogout}>
+            <button className="logout-button" onClick={() => {
+              logout();
+              navigate("/"); // Rediriger vers la page d'accueil après déconnexion
+            }}>
               Déconnexion
             </button>
-            <div className="user-icon">👤</div>
+            <div className="user-icon" onClick={handleProfileClick}>👤</div>
           </div>
         ) : (
           <div className="buttons">

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
 import "./LoginPage.css";
-import authService from "../services/authService";
 
-function LoginPage({ onLogin }) {
+function LoginPage() {
+  const { login } = useAuth();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,8 +12,7 @@ function LoginPage({ onLogin }) {
 
   const handleLoginClick = async () => {
     try {
-      await authService.login(username, password);
-      onLogin();
+      await login(username, password);
       navigate("/");
     } catch (error) {
       setMessage("Login failed");

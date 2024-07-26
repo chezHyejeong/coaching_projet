@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import authService from "../services/authService";
+import { useAuth } from "../contexts/authContext";
 import "./InscriptionPage.css";
 
 function InscriptionPage() {
+  const { signup } = useAuth();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,9 +12,7 @@ function InscriptionPage() {
 
   const handleSignupClick = async () => {
     try {
-      // Ici nous simulons l'inscription en appelant l'API
-      await authService.signup(username, email, password);
-      console.log("Signup successful and user logged in");
+      await signup(username, email, password);
       navigate("/");
     } catch (error) {
       console.error("Error during signup:", error.message);
