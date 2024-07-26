@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import { useAuth } from "../contexts/authContext"; // Importer le hook pour accéder à `logout`
 import "./ProfilePage.css";
 import carImage from "../assets/images/gate_car1.png";
 
 function ProfilePage() {
   const navigate = useNavigate();
+  const { logout } = useAuth(); // Utiliser le hook pour obtenir la fonction `logout`
 
   const handleManageCarsClick = () => {
     navigate("/manage-cars");
@@ -14,6 +15,11 @@ function ProfilePage() {
   const handleViewAllReservationsClick = (event) => {
     event.preventDefault();
     navigate("/view-all-reservations");
+  };
+
+  const handleLogoutClick = () => {
+    logout(); // Appeler la fonction `logout` du contexte
+    navigate("/"); // Rediriger vers la page d'accueil ou une autre page après la déconnexion
   };
 
   return (
@@ -68,7 +74,9 @@ function ProfilePage() {
           </a>
         </div>
         <div className="logout-button-container">
-          <button className="logout-button">Déconnexion</button>
+          <button className="logout-button" onClick={handleLogoutClick}>
+            Déconnexion
+          </button>
         </div>
       </main>
     </div>
