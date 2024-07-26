@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/Header";
-import carImage from "./assets/images/gate_car1.png";
+import Header from "../components/Header";
+import carImage from "../assets/images/gate_car1.png";
 import "./ViewAllReservationsPage.css";
 
 const reservationsData = [

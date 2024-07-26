@@ -8,7 +8,7 @@ import CarDetailsPage from "./pages/CarDetailsPage";
 import carImage from "./assets/images/gate_car1.png";
 import ProfilePage from "./pages/ProfilePage";
 import ManageCarsPage from "./pages/ManageCarsPage";
-import ViewAllReservationsPage from "./ViewAllReservationsPage";
+import ViewAllReservationsPage from "./pages/ViewAllReservationsPage";
 import authService from "./services/authService";
 import Header from "./components/Header";
 
